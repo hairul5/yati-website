@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ms" data-lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yayasan YATI</title>
+<meta name="description" content="Yayasan Pendidikan Teknologi dan Insani (YATI) — yayasan berdaftar di bawah Akta 258 yang menyokong pendidikan, keusahawanan dan kebajikan golongan B40, anak yatim dan komuniti rentan.">
+<meta property="og:title" content="Yayasan Pendidikan Teknologi dan Insani (YATI)">
+<meta property="og:description" content="Bersama Membangun Insan, Bersama Membina Masa Depan.">
+<meta property="og:image" content="assets/yati-logo-full.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one long page — civic letterhead hero, then alternating paper/panel bands; navy carries trust, red marks the call to give. */
+:root {
+  --paper: #F4F6FA;
+  --panel: #FFFFFF;
+  --ink: #101A33;
+  --muted: #4D5872;
+  --rule: #D9DEE9;
+  --navy: #14295F;
+  --navy-soft: #E4E9F4;
+  --red: #B3172E;
+  --on-navy: #F4F6FA;
+  --display: "Spectral", Georgia, "Times New Roman", serif;
+  --body: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --wrap: 72rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C1328; --panel: #131C38; --ink: #E7EBF5; --muted: #A3ADC6; --rule: #26314F;
+    --navy: #9DB3EC; --navy-soft: #1A2547; --red: #D94A5E; --on-navy: #0C1328; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0C1328; --panel: #131C38; --ink: #E7EBF5; --muted: #A3ADC6; --rule: #26314F;
+  --navy: #9DB3EC; --navy-soft: #1A2547; --red: #D94A5E; --on-navy: #0C1328; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: var(--navy); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+
+/* bilingual switching */
+[data-lang="ms"] .en, [data-lang="en"] .ms { display: none !important; }
+
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: 1.25rem; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.15; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.9rem, 1.4rem + 2vw, 2.75rem); }
+h3 { font-size: 1.35rem; }
+p { margin: 0; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+.lede { color: var(--muted); max-width: 40rem; font-size: 1.1rem; }
+
+/* header */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.head-row { display: flex; align-items: center; gap: 1.25rem; min-height: 4.25rem; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink); margin-right: auto; }
+.brand img { width: 2.1rem; }
+.brand b { font-family: var(--display); font-size: 1.45rem; letter-spacing: .02em; color: var(--navy); }
+.brand small { display: block; font-size: .7rem; line-height: 1.2; color: var(--muted); max-width: 12rem; }
+.nav { display: flex; gap: 1.4rem; }
+.nav a { text-decoration: none; color: var(--ink); font-size: .92rem; font-weight: 500; }
+.nav a:hover { color: var(--red); }
+.lang { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; background: var(--panel); }
+.lang button { border: 0; background: transparent; color: var(--muted); font: 700 .78rem var(--body); letter-spacing: .06em; padding: .35rem .7rem; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--navy); color: var(--on-navy); }
+@media (max-width: 960px) { .nav { display: none; } }
+
+/* hero */
+.hero { padding-block: clamp(3rem, 6vw, 5.5rem); }
+.hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 3rem; align-items: center; }
+.hero h1 { font-size: clamp(2.5rem, 1.6rem + 4vw, 4.4rem); color: var(--navy); letter-spacing: -.01em; }
+.hero h1 em { font-style: italic; color: var(--red); font-weight: 500; }
+.hero .lede { margin-top: 1.4rem; }
+.hero-name { margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: .95rem; color: var(--muted); }
+.hero-name strong { color: var(--ink); }
+.cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.4rem; border-radius: 6px; font-weight: 700; font-size: .98rem; text-decoration: none; border: 2px solid transparent; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { filter: brightness(1.08); }
+.btn-line { border-color: var(--navy); color: var(--navy); }
+.btn-line:hover { background: var(--navy-soft); }
+.seal { position: relative; justify-self: center; width: min(100%, 22rem); aspect-ratio: 1; display: grid; place-items: center; }
+.seal::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(from 0deg, var(--navy-soft) 0deg 4deg, transparent 4deg 12deg); mask: radial-gradient(circle, transparent 52%, #000 53%); }
+.seal-disc { position: relative; width: 74%; aspect-ratio: 1; border-radius: 50%; background: #FCFDF7; display: grid; place-items: center; box-shadow: 0 0 0 1px var(--rule), 0 18px 40px -20px rgba(16,26,51,.35); }
+.seal-disc img { width: 58%; }
+@media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } .seal { order: -1; width: 13rem; } }
+
+/* registration strip */
+.reg { background: var(--navy); color: var(--on-navy); }
+.reg-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding-block: 1.6rem; }
+.reg-row div { min-width: 0; }
+.reg dt { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; opacity: .75; font-weight: 700; }
+.reg dd { margin: .25rem 0 0; font-weight: 600; font-size: 1rem; }
+@media (max-width: 760px) { .reg-row { grid-template-columns: 1fr; gap: 1rem; } }
+
+/* sections */
+section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+.band { background: var(--panel); border-block: 1px solid var(--rule); }
+.sec-head { display: grid; gap: .8rem; margin-bottom: 2.5rem; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.about-grid > * { min-width: 0; }
+.about-text p + p { margin-top: 1rem; }
+.vision { border-left: 3px solid var(--red); padding: .25rem 0 .25rem 1.4rem; font-family: var(--display); font-size: 1.45rem; line-height: 1.4; color: var(--navy); }
+.mission { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: .9rem; counter-reset: m; }
+.mission li { display: grid; grid-template-columns: 2rem 1fr; gap: .5rem; counter-increment: m; }
+.mission li::before { content: counter(m); font-family: var(--display); font-weight: 600; color: var(--red); font-size: 1.15rem; line-height: 1.5; }
+@media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } }
+
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pillar { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.pillar .tag { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); }
+.pillar ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .45rem; color: var(--muted); font-size: .97rem; }
+.pillar .note { margin-top: auto; padding-top: 1rem; border-top: 1px dashed var(--rule); font-size: .88rem; color: var(--red); font-weight: 600; }
+@media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
+
+.targets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--rule); }
+.targets div { padding: 1.4rem 1.2rem 0 0; min-width: 0; }
+.targets b { display: block; font-family: var(--display); font-size: 1.15rem; color: var(--navy); margin-bottom: .35rem; }
+.targets span { color: var(--muted); font-size: .95rem; }
+@media (max-width: 860px) { .targets { grid-template-columns: 1fr 1fr; row-gap: 1rem; } }
+@media (max-width: 480px) { .targets { grid-template-columns: 1fr; } }
+
+/* governance */
+.gov-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; }
+.gov-grid > * { min-width: 0; }
+.patron { background: var(--navy); color: var(--on-navy); border-radius: 10px; padding: 2rem; }
+.patron .eyebrow { color: inherit; opacity: .75; }
+.patron h3 { margin-top: .6rem; font-size: 1.5rem; }
+.commit { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: 1rem; }
+.commit li { padding-left: 1.6rem; position: relative; color: var(--muted); font-size: .97rem; }
+.commit li::before { content: ""; position: absolute; left: 0; top: .55rem; width: .7rem; height: .7rem; border: 2px solid var(--red); border-radius: 2px; transform: rotate(45deg); }
+.commit li strong { color: var(--ink); }
+.founder-list { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: .9rem; }
+.founder-list li { display: grid; gap: .1rem; }
+.founder-list b { font-family: var(--display); font-size: 1.2rem; font-weight: 600; }
+.founder-list span { font-size: .85rem; opacity: .8; }
+.founder-note { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, var(--on-navy) 25%, transparent); font-size: .9rem; opacity: .85; }
+.board { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.board li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; padding-block: 1rem; border-bottom: 1px solid var(--rule); }
+.board .who { display: grid; min-width: 0; }
+.board .nm { font-weight: 600; }
+.board .bg { font-size: .88rem; color: var(--muted); }
+.board .rl { font-size: .85rem; color: var(--muted); }
+.board .rl.chair { color: var(--red); font-weight: 700; }
+@media (max-width: 860px) { .gov-grid { grid-template-columns: 1fr; } }
+
+/* give */
+.give-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+.give-grid > * { min-width: 0; }
+.ways { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.ways li { display: grid; gap: .2rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--rule); }
+.ways b { font-family: var(--display); font-size: 1.2rem; color: var(--navy); }
+.ways span { color: var(--muted); font-size: .97rem; }
+.bank { background: var(--panel); border: 2px solid var(--navy); border-radius: 10px; padding: 1.75rem; }
+.bank dl { margin: 1.25rem 0 0; display: grid; gap: .9rem; }
+.bank dt { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.bank dd { margin: .15rem 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pending { display: inline-block; background: var(--navy-soft); color: var(--navy); padding: .15rem .55rem; border-radius: 4px; font-size: .88rem; font-weight: 600; }
+.bank .fine { margin-top: 1.25rem; font-size: .86rem; color: var(--muted); }
+@media (max-width: 860px) { .give-grid { grid-template-columns: 1fr; } }
+
+/* contact */
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.contact-grid > div { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 1.5rem; min-width: 0; overflow-wrap: anywhere; }
+.contact-grid dt { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: .5rem; }
+.contact-grid dd { margin: 0; font-weight: 500; }
+.contact-grid a { font-weight: 600; }
+.copy { margin-top: .6rem; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); font: 600 .8rem var(--body); padding: .3rem .7rem; border-radius: 5px; cursor: pointer; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+footer { background: var(--navy); color: var(--on-navy); padding-block: 2.5rem; font-size: .9rem; }
+.foot-row { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; justify-content: space-between; }
+.foot-row p { max-width: 34rem; opacity: .85; }
+.motto { font-family: var(--display); font-style: italic; font-size: 1.15rem; opacity: 1 !important; }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#utama">
+      <img src="assets/yati-emblem.png" alt="">
+      <span><b>YATI</b><small>Yayasan Pendidikan Teknologi dan Insani</small></span>
+    </a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#tentang"><span class="ms">Tentang</span><span class="en">About</span></a>
+      <a href="#program"><span class="ms">Program</span><span class="en">Programmes</span></a>
+      <a href="#tadbir-urus"><span class="ms">Tadbir Urus</span><span class="en">Governance</span></a>
+      <a href="#sumbang"><span class="ms">Sumbang</span><span class="en">Give</span></a>
+      <a href="#hubungi"><span class="ms">Hubungi</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Bahasa / Language">
+      <button type="button" id="lang-ms" data-set="ms" aria-pressed="true">BM</button>
+      <button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="utama">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><span class="ms">Pendidikan · Kebajikan · Pembangunan Modal Insan</span><span class="en">Education · Welfare · Human Capital Development</span></p>
+      <h1 style="margin-top:1rem">
+        <span class="ms">Bersama membangun insan, <em>bersama membina masa depan.</em></span>
+        <span class="en">Building people together, <em>building the future together.</em></span>
+      </h1>
+      <p class="lede">
+        <span class="ms">YATI membantu pelajar B40, anak yatim dan komuniti rentan melalui biasiswa, latihan keusahawanan dan bantuan kebajikan, supaya setiap insan berpeluang berdikari dan maju.</span>
+        <span class="en">YATI supports B40 students, orphans and vulnerable communities through scholarships, entrepreneurship training and welfare aid, so that every person has the chance to stand on their own and thrive.</span>
+      </p>
+      <div class="cta">
+        <a class="btn btn-red" href="#sumbang"><span class="ms">Sumbang kepada YATI</span><span class="en">Give to YATI</span></a>
+        <a class="btn btn-line" href="#hubungi"><span class="ms">Jadi rakan kerjasama</span><span class="en">Become a partner</span></a>
+      </div>
+      <p class="hero-name"><strong>Yayasan Pendidikan Teknologi dan Insani</strong> — <span class="ms">yayasan nasional berdaftar yang berkhidmat untuk masyarakat di seluruh Malaysia.</span><span class="en">a registered national foundation serving communities across Malaysia.</span></p>
+    </div>
+    <div class="seal" aria-hidden="true"><div class="seal-disc"><img src="assets/yati-emblem.png" alt=""></div></div>
+  </div>
+</section>
+
+<div class="reg">
+  <dl class="wrap reg-row">
+    <div><dt><span class="ms">Status</span><span class="en">Status</span></dt><dd><span class="ms">Pemegang Amanah diperbadankan di bawah Akta 258</span><span class="en">Trustees incorporated under Act 258</span></dd></div>
+    <div><dt><span class="ms">Pendaftar</span><span class="en">Registrar</span></dt><dd><span class="ms">BHEUU, Jabatan Perdana Menteri</span><span class="en">Legal Affairs Division (BHEUU), Prime Minister's Department</span></dd></div>
+    <div><dt><span class="ms">Jangkauan</span><span class="en">Reach</span></dt><dd><span class="ms">Yayasan nasional, berkhidmat di seluruh Malaysia</span><span class="en">A national foundation serving all of Malaysia</span></dd></div>
+  </dl>
+</div>
+
+<section id="tentang">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <p class="eyebrow"><span class="ms">Tentang YATI</span><span class="en">About YATI</span></p>
+      <h2 style="margin-block:.8rem 1.5rem"><span class="ms">Pendidikan, teknologi dan kebajikan dalam satu ekosistem.</span><span class="en">Education, technology and welfare in one ecosystem.</span></h2>
+      <p>
+        <span class="ms">Yayasan Pendidikan Teknologi dan Insani (YATI) ialah badan kebajikan dan pembangunan sosial yang berteraskan pendidikan, kebajikan dan pembangunan modal insan. YATI ditubuhkan untuk menjawab cabaran ekonomi, jurang pendidikan dan kekurangan akses kepada peluang pembangunan diri yang masih dihadapi sebahagian masyarakat.</span>
+        <span class="en">Yayasan Pendidikan Teknologi dan Insani (YATI) is a charitable and social development foundation built on education, welfare and human capital development. It was established to address the economic pressures, education gaps and lack of access to self-development opportunities that parts of our society still face.</span>
+      </p>
+      <p>
+        <span class="ms">Walaupun Malaysia telah maju dalam banyak aspek, keluarga berpendapatan rendah (B40), anak yatim dan komuniti rentan masih terhalang oleh kekangan kewangan, akses pendidikan yang terhad dan kekurangan kemahiran praktikal. YATI hadir sebagai pemangkin untuk membina masyarakat yang berdaya tahan di seluruh negara.</span>
+        <span class="en">Although Malaysia has progressed in many ways, low-income (B40) families, orphans and vulnerable communities are still held back by financial constraints, limited access to education and a lack of practical skills. YATI exists as a catalyst for a more resilient society across the country.</span>
+      </p>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:1rem"><span class="ms">Visi</span><span class="en">Vision</span></p>
+      <p class="vision">
+        <span class="ms">Menjadi yayasan peneraju dalam pembangunan insan yang menyepadukan pendidikan, teknologi dan kebajikan ke arah masyarakat yang berdaya tahan, berdikari dan sejahtera.</span>
+        <span class="en">To be a leading foundation in human development that integrates education, technology and welfare towards a resilient, self-reliant and prosperous society.</span>
+      </p>
+      <p class="eyebrow" style="margin-top:2.5rem"><span class="ms">Misi</span><span class="en">Mission</span></p>
+      <ol class="mission">
+        <li><span><span class="ms">Menyediakan akses kepada pendidikan berkualiti kepada golongan yang kurang berkemampuan.</span><span class="en">Provide access to quality education for those with limited means.</span></span></li>
+        <li><span><span class="ms">Menyalurkan bantuan kebajikan yang menyeluruh kepada keluarga miskin dan komuniti rentan.</span><span class="en">Deliver comprehensive welfare aid to poor families and vulnerable communities.</span></span></li>
+        <li><span><span class="ms">Membangunkan modal insan melalui latihan, bimbingan dan pembinaan kapasiti secara berterusan.</span><span class="en">Develop human capital through continuous training, mentoring and capacity building.</span></span></li>
+        <li><span><span class="ms">Menjalin kerjasama strategik dengan agensi kerajaan, sektor korporat, institusi pendidikan dan masyarakat sivil.</span><span class="en">Build strategic partnerships with government agencies, the corporate sector, educational institutions and civil society.</span></span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="program" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="ms">Program dan Aktiviti</span><span class="en">Programmes and Activities</span></p>
+      <h2><span class="ms">Tiga teras bantuan YATI</span><span class="en">YATI's three areas of support</span></h2>
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <p class="tag"><span class="ms">Pendidikan</span><span class="en">Education</span></p>
+        <h3><span class="ms">Bantuan Pendidikan dan Biasiswa</span><span class="en">Education Aid and Scholarships</span></h3>
+        <ul>
+          <li><span class="ms">Biasiswa atau bantuan kewangan kepada pelajar daripada keluarga miskin dan anak yatim</span><span class="en">Scholarships or financial aid for students from poor families and orphans</span></li>
+          <li><span class="ms">Bantuan yuran pengajian, peralatan pembelajaran dan sokongan pendidikan</span><span class="en">Help with tuition fees, learning equipment and education support</span></li>
+          <li><span class="ms">Program sokongan akademik dan motivasi pelajar</span><span class="en">Academic support and student motivation programmes</span></li>
+        </ul>
+        <p class="note"><span class="ms">Permohonan biasiswa dalam talian akan dibuka tidak lama lagi.</span><span class="en">Online scholarship applications will open soon.</span></p>
+      </article>
+      <article class="pillar">
+        <p class="tag"><span class="ms">Ekonomi</span><span class="en">Economy</span></p>
+        <h3><span class="ms">Keusahawanan dan Pembangunan Ekonomi</span><span class="en">Entrepreneurship and Economic Development</span></h3>
+        <ul>
+          <li><span class="ms">Latihan keusahawanan secara berstruktur</span><span class="en">Structured entrepreneurship training</span></li>
+          <li><span class="ms">Sesi mentoring dan bimbingan perniagaan</span><span class="en">Mentoring and business coaching</span></li>
+          <li><span class="ms">Akses kepada mikro-pembiayaan dan rakan strategik kewangan</span><span class="en">Access to micro-financing and financial partners</span></li>
+          <li><span class="ms">Literasi kewangan dan pengurusan perniagaan kecil</span><span class="en">Financial literacy and small business management</span></li>
+        </ul>
+      </article>
+      <article class="pillar">
+        <p class="tag"><span class="ms">Kebajikan</span><span class="en">Welfare</span></p>
+        <h3><span class="ms">Kebajikan dan Keperluan Asas</span><span class="en">Welfare and Basic Needs</span></h3>
+        <ul>
+          <li><span class="ms">Bantuan pakaian, kelengkapan rumah dan barangan keperluan harian</span><span class="en">Clothing, household items and daily essentials</span></li>
+          <li><span class="ms">Bantuan kecemasan kepada keluarga terjejas</span><span class="en">Emergency aid for affected families</span></li>
+          <li><span class="ms">Program sumbangan berkala kepada komuniti sasaran</span><span class="en">Regular giving programmes for target communities</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin-top:4rem;margin-bottom:0">
+      <p class="eyebrow"><span class="ms">Kumpulan Sasar</span><span class="en">Who We Help</span></p>
+    </div>
+    <div class="targets">
+      <div><b><span class="ms">Pelajar B40</span><span class="en">B40 students</span></b><span><span class="ms">Pelajar daripada keluarga berpendapatan rendah</span><span class="en">Students from low-income households</span></span></div>
+      <div><b><span class="ms">Anak yatim</span><span class="en">Orphans</span></b><span><span class="ms">Anak yatim dan pelajar miskin bandar dan luar bandar</span><span class="en">Orphans and poor students in urban and rural areas</span></span></div>
+      <div><b><span class="ms">Belia</span><span class="en">Youth</span></b><span><span class="ms">Belia menganggur atau berpendapatan rendah</span><span class="en">Unemployed or low-income young people</span></span></div>
+      <div><b><span class="ms">Komuniti rentan</span><span class="en">Vulnerable communities</span></b><span><span class="ms">Keluarga miskin dan komuniti yang memerlukan</span><span class="en">Poor families and communities in need</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="tadbir-urus">
+  <div class="wrap gov-grid">
+    <div>
+      <p class="eyebrow"><span class="ms">Tadbir Urus</span><span class="en">Governance</span></p>
+      <h2 style="margin-block:.8rem 1.25rem"><span class="ms">Telus, berintegriti dan bertanggungjawab.</span><span class="en">Transparent, principled and accountable.</span></h2>
+      <p class="lede" style="font-size:1rem"><span class="ms">Setiap ringgit yang diamanahkan kepada YATI diurus mengikut Surat Ikatan Amanah dan diawasi oleh Lembaga Pemegang Amanah.</span><span class="en">Every ringgit entrusted to YATI is managed under its Trust Deed and overseen by the Board of Trustees.</span></p>
+      <ul class="commit">
+        <li><span class="ms"><strong>Berdaftar di sisi undang-undang.</strong> Pemegang Amanah YATI diperbadankan di bawah Akta Pemegang Amanah (Pemerbadanan) 1952 [Akta 258].</span><span class="en"><strong>Legally registered.</strong> YATI's trustees are incorporated under the Trustees (Incorporation) Act 1952 [Act 258].</span></li>
+        <li><span class="ms"><strong>Garis panduan kewangan bertulis.</strong> Penerimaan dan perbelanjaan dana mengikut prosedur kelulusan yang ditetapkan Lembaga.</span><span class="en"><strong>Written financial guidelines.</strong> Funds are received and spent under approval procedures set by the Board.</span></li>
+        <li><span class="ms"><strong>Akaun diaudit setiap tahun.</strong> Penyata kewangan diaudit oleh juruaudit bebas.</span><span class="en"><strong>Annually audited accounts.</strong> Financial statements are audited by an independent auditor.</span></li>
+        <li><span class="ms"><strong>Bebas daripada aktiviti perniagaan.</strong> YATI tidak terlibat secara langsung dalam sebarang aktiviti perniagaan.</span><span class="en"><strong>No business activities.</strong> YATI does not engage directly in any commercial activity.</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="patron">
+        <p class="eyebrow"><span class="ms">Pengasas Yayasan</span><span class="en">Founders</span></p>
+        <ul class="founder-list">
+          <li><b>To' Puan Syaripah Rusmawati binti Syed Idrus</b><span><span class="ms">Pengasas dan Penaung</span><span class="en">Founder and Patron</span></span></li>
+          <li><b>Prof. Dr. Ir. Hairul Azhar Abdul Rashid</b><span><span class="ms">Pengasas</span><span class="en">Founder</span></span></li>
+          <li><b>Hj. Hamdan Abd. Aziz</b><span><span class="ms">Pengasas</span><span class="en">Founder</span></span></li>
+        </ul>
+        <p class="founder-note"><span class="ms">Pengasas menetapkan hala tuju, visi dan misi yayasan serta memberi panduan dasar kepada Lembaga Pemegang Amanah.</span><span class="en">The founders set the foundation's direction, vision and mission, and provide policy guidance to the Board of Trustees.</span></p>
+      </div>
+      <h3 style="margin-block:2.25rem 1rem"><span class="ms">Lembaga Pemegang Amanah</span><span class="en">Board of Trustees</span></h3>
+      <ul class="board">
+        <li><span class="who"><span class="nm">Prof. Dr. Ir. Hairul Azhar Abdul Rashid</span><span class="bg"><span class="ms">Rektor, University College TATI</span><span class="en">Rector, University College TATI</span></span></span><span class="rl chair"><span class="ms">Pengerusi</span><span class="en">Chairman</span></span></li>
+        <li><span class="who"><span class="nm">Hj. Hamdan Abd. Aziz</span><span class="bg"><span class="ms">Pengarah Urusan</span><span class="en">Managing Director</span></span></span><span class="rl"><span class="ms">Pemegang Amanah</span><span class="en">Trustee</span></span></li>
+        <li><span class="who"><span class="nm">Aidy Syukri Yahya</span><span class="bg"><span class="ms">Penasihat Korporat</span><span class="en">Corporate Adviser</span></span></span><span class="rl"><span class="ms">Pemegang Amanah</span><span class="en">Trustee</span></span></li>
+        <li><span class="who"><span class="nm">Kamal Rahaidi Abd Halim</span><span class="bg"><span class="ms">Pakar Pengurusan</span><span class="en">Management Specialist</span></span></span><span class="rl"><span class="ms">Pemegang Amanah</span><span class="en">Trustee</span></span></li>
+        <li><span class="who"><span class="nm">Mohamad Farid Abdul Manan</span><span class="bg"><span class="ms">Pakar Logistik dan Mekanikal</span><span class="en">Logistics and Mechanical Specialist</span></span></span><span class="rl"><span class="ms">Pemegang Amanah</span><span class="en">Trustee</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="sumbang" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="ms">Cara Menyumbang</span><span class="en">How to Give</span></p>
+      <h2><span class="ms">Sumbangan anda membuka peluang.</span><span class="en">Your gift opens doors.</span></h2>
+      <p class="lede"><span class="ms">YATI mengalu-alukan sokongan daripada individu, syarikat korporat, agensi kerajaan, institusi pendidikan dan badan bukan kerajaan di seluruh Malaysia.</span><span class="en">YATI welcomes support from individuals, companies, government agencies, educational institutions and non-governmental organisations across Malaysia.</span></p>
+    </div>
+    <div class="give-grid">
+      <ul class="ways">
+        <li><b><span class="ms">Penajaan biasiswa</span><span class="en">Sponsor a scholarship</span></b><span><span class="ms">Menaja yuran pengajian atau keperluan pembelajaran pelajar B40 dan anak yatim.</span><span class="en">Fund tuition fees or learning needs for B40 students and orphans.</span></span></li>
+        <li><b><span class="ms">Geran dan dana CSR</span><span class="en">Grants and CSR funds</span></b><span><span class="ms">Menyalurkan peruntukan tanggungjawab sosial korporat kepada program berimpak tinggi.</span><span class="en">Channel corporate social responsibility funds to high-impact programmes.</span></span></li>
+        <li><b><span class="ms">Perkongsian kepakaran</span><span class="en">Share your expertise</span></b><span><span class="ms">Menyumbang tenaga pakar, mentor dan jurulatih untuk program latihan dan keusahawanan.</span><span class="en">Contribute experts, mentors and trainers to training and entrepreneurship programmes.</span></span></li>
+        <li><b><span class="ms">Sumbangan barangan</span><span class="en">In-kind donations</span></b><span><span class="ms">Pakaian, kelengkapan rumah dan barangan keperluan harian untuk komuniti sasaran.</span><span class="en">Clothing, household items and daily essentials for communities in need.</span></span></li>
+        <li><b><span class="ms">Rakan pelaksana program</span><span class="en">Programme partner</span></b><span><span class="ms">Merancang dan melaksanakan program bersama YATI.</span><span class="en">Plan and run programmes together with YATI.</span></span></li>
+      </ul>
+      <aside class="bank">
+        <p class="eyebrow"><span class="ms">Sumbangan Wang</span><span class="en">Monetary Donations</span></p>
+        <h3 style="margin-top:.5rem"><span class="ms">Akaun rasmi YATI</span><span class="en">YATI's official account</span></h3>
+        <dl>
+          <div><dt><span class="ms">Nama akaun</span><span class="en">Account name</span></dt><dd>Pemegang Amanah Yayasan Pendidikan Teknologi dan Insani Berdaftar</dd></div>
+          <div><dt>Bank</dt><dd>Bank Islam Malaysia Berhad</dd></div>
+          <div><dt><span class="ms">Nombor akaun</span><span class="en">Account number</span></dt><dd><span class="pending"><span class="ms">Akan dimaklumkan</span><span class="en">To be announced</span></span></dd></div>
+        </dl>
+        <p class="fine"><span class="ms">Untuk resit rasmi atau penajaan korporat, sila hubungi pihak YATI terlebih dahulu.</span><span class="en">For official receipts or corporate sponsorship, please contact YATI first.</span></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="hubungi">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="ms">Hubungi Kami</span><span class="en">Contact Us</span></p>
+      <h2><span class="ms">Pertanyaan, kerjasama dan penajaan</span><span class="en">Enquiries, partnerships and sponsorship</span></h2>
+    </div>
+    <dl class="contact-grid">
+      <div>
+        <dt><span class="ms">E-mel</span><span class="en">Email</span></dt>
+        <dd><a href="mailto:yatiadmin@yayasanyati.net" id="email">yatiadmin@yayasanyati.net</a></dd>
+        <button type="button" class="copy" id="copy-email"><span class="ms">Salin</span><span class="en">Copy</span></button>
+      </div>
+      <div>
+        <dt><span class="ms">Telefon</span><span class="en">Phone</span></dt>
+        <dd><a href="tel:+60179802000">+60 17-980 2000</a><br><span style="color:var(--muted);font-size:.92rem">Tuan Haji Hamdan Abd. Aziz</span></dd>
+      </div>
+      <div>
+        <dt><span class="ms">Kerjasama</span><span class="en">Partnerships</span></dt>
+        <dd><span class="ms">Kami bersedia bertemu, secara bersemuka atau dalam talian, dengan syarikat, agensi dan institusi dari seluruh negara.</span><span class="en">We are happy to meet, in person or online, with companies, agencies and institutions from across the country.</span></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>
+      <p class="motto"><span class="ms">“Bersama Membangun Insan, Bersama Membina Masa Depan”</span><span class="en">“Building People Together, Building the Future Together”</span></p>
+      <p style="margin-top:.75rem">Pemegang Amanah Yayasan Pendidikan Teknologi dan Insani Berdaftar · <span class="ms">Diperbadankan di bawah Akta 258, Malaysia</span><span class="en">Incorporated under Act 258, Malaysia</span></p>
+      <p style="margin-top:.4rem;font-size:.82rem"><span class="ms">Alamat berdaftar:</span><span class="en">Registered address:</span> Teluk Kalong, 24000 Kemaman, Terengganu, Malaysia</p>
+    </div>
+    <p>© <span id="yr">2026</span> YATI</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  function setLang(l) {
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l === 'en' ? 'en' : 'ms');
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set') === l ? 'true' : 'false');
+    });
+    try { localStorage.setItem('yati-lang', l); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('yati-lang'); } catch (e) {}
+  if (saved === 'en' || saved === 'ms') setLang(saved);
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-set')); });
+  });
+  var btn = document.getElementById('copy-email');
+  btn.addEventListener('click', function () {
+    var text = 'yatiadmin@yayasanyati.net';
+    var done = function () {
+      var en = root.getAttribute('data-lang') === 'en';
+      btn.textContent = en ? 'Copied' : 'Disalin';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+        var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      });
+    }
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
