@@ -65,7 +65,8 @@ p { margin: 0; }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink); margin-right: auto; }
 .brand img { width: 2.1rem; }
 .brand b { font-family: var(--display); font-size: 1.45rem; letter-spacing: .02em; color: var(--navy); }
-.brand small { display: block; font-size: .7rem; line-height: 1.2; color: var(--muted); max-width: 12rem; }
+.brand small { display: block; font-size: .7rem; line-height: 1.2; color: var(--muted); white-space: nowrap; }
+@media (max-width: 520px) { .brand small { white-space: normal; max-width: 12rem; } }
 .nav { display: flex; gap: 1.4rem; }
 .nav a { text-decoration: none; color: var(--ink); font-size: .92rem; font-weight: 500; }
 .nav a:hover { color: var(--red); }
